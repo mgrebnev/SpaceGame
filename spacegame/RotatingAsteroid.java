@@ -15,8 +15,9 @@ public class RotatingAsteroid {
     private RotateTransition animation;
     private double asteroidSpeed;
     private double duratonAnimation;
+    private int bonusScores;
 
-    public RotatingAsteroid(int r, int x, int y,Image img,String name,double duration,double speed){
+    public RotatingAsteroid(int r, int x, int y,Image img,String name,double duration,double speed,int scores){
         c = new Circle();
         c.setRadius(r);
         c.setFill(new ImagePattern(img));
@@ -24,9 +25,9 @@ public class RotatingAsteroid {
         c.setTranslateY(y);
         c.setUserData(name);
 
+        this.bonusScores = scores;
         this.duratonAnimation = duration;
         this.asteroidSpeed = speed;
-
     }
 
     public void setAnimation() {
@@ -57,4 +58,7 @@ public class RotatingAsteroid {
             asteroidSpeed = s;
     }
 
+    public int getBonusScores() {
+        return bonusScores;
+    }
 }

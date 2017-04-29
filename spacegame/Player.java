@@ -19,6 +19,7 @@ import javafx.scene.shape.Rectangle;
 public class Player {
 
     private Rectangle rocket;
+
     private double SpeedRocket = 2.8;
     private double widthRocket;
     private double heightRocket;
@@ -125,6 +126,10 @@ public class Player {
             setSuperBreak(positionCrash);
         }
 
+    }
+
+    public void setSpeedRocket(double speedRocket) {
+        SpeedRocket = speedRocket;
     }
 
     public int getHealthRocket() {

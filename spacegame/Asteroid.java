@@ -12,6 +12,8 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -97,7 +99,7 @@ public class Asteroid {
                         obj.get(i).getCircle().setVisible(false);
                         Main.root.getChildren().remove(obj.get(i));
                         obj.remove(obj.get(i));
-                        Main.scores += 20;
+                        Main.scores += 10 + obj.get(i).getBonusScores();
                         Main.refreshScores(Main.scores);
                     }
                 }
@@ -174,7 +176,8 @@ public class Asteroid {
                     firstAsteroid,
                     "firstA",
                     0.3,
-                    this.speedAsteroids[0]);
+                    this.speedAsteroids[0],
+                    10);
 
             obj.add(a);
             Main.root.getChildren().addAll(a.getCircle());
@@ -189,7 +192,8 @@ public class Asteroid {
                     secondAsteroid,
                     "secondA",
                     0.5,
-                    this.speedAsteroids[1]);
+                    this.speedAsteroids[1],
+                    12);
 
             obj.add(b);
             Main.root.getChildren().addAll(b.getCircle());
@@ -204,7 +208,8 @@ public class Asteroid {
                     thirdAsteroid,
                     "thirdA",
                     0.6,
-                    this.speedAsteroids[2]);
+                    this.speedAsteroids[2],
+                    16);
 
             obj.add(c);
             Main.root.getChildren().addAll(c.getCircle());
@@ -219,7 +224,8 @@ public class Asteroid {
                     fourthAsteroid,
                     "fourthA",
                     0.8,
-                    this.speedAsteroids[3]);
+                    this.speedAsteroids[3],
+                    20);
 
             obj.add(d);
             Main.root.getChildren().addAll(d.getCircle());
